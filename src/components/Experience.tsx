@@ -77,7 +77,7 @@ const Experience = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 gradient-text">Work Experience</h2>
+            <h2 className="text-4xl font-bold mb-4 text-black">Work Experience</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Driving data-driven decisions and building impactful ML solutions across industries
             </p>

@@ -79,7 +79,7 @@ const Projects = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 gradient-text">Featured Projects</h2>
+            <h2 className="text-4xl font-bold mb-4 text-black">Featured Projects</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Showcasing impactful data science and machine learning solutions
             </p>

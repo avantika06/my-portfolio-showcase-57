@@ -82,7 +82,7 @@ const Contact = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 gradient-text">Let's Connect</h2>
+            <h2 className="text-4xl font-bold mb-4 text-black">Let's Connect</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Ready to discuss data science opportunities and how I can contribute to your team
             </p>

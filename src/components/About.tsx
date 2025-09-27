@@ -9,7 +9,7 @@ const About = () => {
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <h2 className="text-4xl font-bold mb-4 gradient-text">About Me</h2>
+            <h2 className="text-4xl font-bold mb-4 text-black">About Me</h2>
             <p className="text-xl text-muted-foreground max-w-2xl mx-auto">
               Passionate about extracting meaningful insights from data to drive business value
             </p>

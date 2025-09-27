@@ -63,7 +63,7 @@ const Navigation = () => {
                 e.preventDefault();
                 scrollToSection("#home");
               }}
-              className="text-2xl font-bold gradient-text cursor-pointer"
+              className="text-2xl font-bold text-black cursor-pointer"
             >
               Avantika D.
             </a>
