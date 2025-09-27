@@ -44,13 +44,13 @@ const Contact = () => {
     {
       icon: Linkedin,
       label: "LinkedIn",
-      href: "#",
+      href: "https://linkedin.com/in/avantika-deshmukh",
       color: "text-blue-600 hover:text-blue-700"
     },
     {
       icon: Github,
       label: "GitHub", 
-      href: "#",
+      href: "https://github.com/avantika-deshmukh",
       color: "text-gray-700 hover:text-gray-900 dark:text-gray-300 dark:hover:text-white"
     }
   ];
@@ -141,7 +141,7 @@ const Contact = () => {
                           className="flex-1"
                           asChild
                         >
-                          <a href={social.href} className="flex items-center gap-2">
+                          <a href={social.href} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2">
                             <IconComponent className="h-5 w-5" />
                             {social.label}
                           </a>
@@ -184,59 +184,40 @@ const Contact = () => {
               </Card>
             </div>
             
-            {/* Contact Form */}
+            {/* Contact Summary */}
             <Card className="glass">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
-                  <Send className="h-5 w-5 text-primary" />
-                  Send Message
+                  <Mail className="h-5 w-5 text-primary" />
+                  Ready to Connect
                 </CardTitle>
                 <p className="text-sm text-muted-foreground">
-                  Have a question or want to discuss a project? I'd love to hear from you!
+                  Let's discuss data science opportunities and how I can contribute to your team's success.
                 </p>
               </CardHeader>
               <CardContent className="space-y-6">
-                <div className="grid md:grid-cols-2 gap-4">
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">First Name</label>
-                    <Input placeholder="John" />
+                <div className="text-center">
+                  <p className="text-lg font-medium mb-4">
+                    I'm always open to discussing new opportunities, collaborations, and innovative data science projects.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                    <Button size="lg" className="bg-gradient-primary" asChild>
+                      <a href="mailto:deshmukhavantika06@gmail.com">
+                        <Mail className="mr-2 h-4 w-4" />
+                        Email Me
+                      </a>
+                    </Button>
+                    <Button size="lg" variant="outline" asChild>
+                      <a href="tel:+16072968298">
+                        <Phone className="mr-2 h-4 w-4" />
+                        Call Me
+                      </a>
+                    </Button>
                   </div>
-                  <div className="space-y-2">
-                    <label className="text-sm font-medium">Last Name</label>
-                    <Input placeholder="Doe" />
-                  </div>
                 </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Email</label>
-                  <Input type="email" placeholder="john.doe@company.com" />
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Company (Optional)</label>
-                  <Input placeholder="Your Company" />
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Subject</label>
-                  <Input placeholder="Data Science Opportunity" />
-                </div>
-                
-                <div className="space-y-2">
-                  <label className="text-sm font-medium">Message</label>
-                  <Textarea 
-                    placeholder="Tell me about your project or opportunity..."
-                    className="min-h-[120px]"
-                  />
-                </div>
-                
-                <Button size="lg" className="w-full bg-gradient-primary">
-                  <Send className="mr-2 h-4 w-4" />
-                  Send Message
-                </Button>
                 
                 <p className="text-xs text-muted-foreground text-center">
-                  I typically respond within 24 hours. Looking forward to connecting!
+                  Based in New York, NY • Available for remote and on-site opportunities
                 </p>
               </CardContent>
             </Card>

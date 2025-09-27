@@ -2,17 +2,19 @@ import { useState, useEffect } from "react";
 import { Button } from "@/components/ui/button";
 import { Sheet, SheetContent, SheetTrigger } from "@/components/ui/sheet";
 import { Menu, X } from "lucide-react";
+import { Link, useLocation } from "react-router-dom";
 
 const Navigation = () => {
   const [isScrolled, setIsScrolled] = useState(false);
   const [activeSection, setActiveSection] = useState("home");
+  const location = useLocation();
 
   const navItems = [
     { label: "Home", href: "#home" },
     { label: "About", href: "#about" },
     { label: "Experience", href: "#experience" },
     { label: "Skills", href: "#skills" },
-    { label: "Projects", href: "#projects" },
+    { label: "Projects", href: "/projects" },
     { label: "Contact", href: "#contact" }
   ];
 
@@ -57,39 +59,46 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <div className="flex items-center">
-            <a 
-              href="#home" 
-              onClick={(e) => {
-                e.preventDefault();
-                scrollToSection("#home");
-              }}
+            <Link
+              to="/"
               className="text-2xl font-bold text-black cursor-pointer"
             >
               Avantika D.
-            </a>
+            </Link>
           </div>
           
           {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-1">
             {navItems.map((item) => (
-              <Button
-                key={item.label}
-                variant="ghost"
-                className={`relative transition-all duration-200 ${
-                  activeSection === item.href.substring(1) 
-                    ? "text-primary font-medium" 
-                    : "text-foreground/70 hover:text-foreground"
-                }`}
-                onClick={(e) => {
-                  e.preventDefault();
-                  scrollToSection(item.href);
-                }}
-              >
-                {item.label}
-                {activeSection === item.href.substring(1) && (
-                  <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full" />
-                )}
-              </Button>
+              item.href.startsWith('/') ? (
+                <Link key={item.label} to={item.href}>
+                  <Button
+                    variant="ghost"
+                    className="transition-all duration-200 text-foreground/70 hover:text-foreground"
+                  >
+                    {item.label}
+                  </Button>
+                </Link>
+              ) : (
+                <Button
+                  key={item.label}
+                  variant="ghost"
+                  className={`relative transition-all duration-200 ${
+                    activeSection === item.href.substring(1) 
+                      ? "text-primary font-medium" 
+                      : "text-foreground/70 hover:text-foreground"
+                  }`}
+                  onClick={(e) => {
+                    e.preventDefault();
+                    scrollToSection(item.href);
+                  }}
+                >
+                  {item.label}
+                  {activeSection === item.href.substring(1) && (
+                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-primary rounded-full" />
+                  )}
+                </Button>
+              )
             ))}
           </div>
           
@@ -124,21 +133,32 @@ const Navigation = () => {
                 <div className="flex-1 py-6">
                   <div className="space-y-2">
                     {navItems.map((item) => (
-                      <Button
-                        key={item.label}
-                        variant="ghost"
-                        className={`w-full justify-start text-left transition-all duration-200 ${
-                          activeSection === item.href.substring(1) 
-                            ? "bg-primary/10 text-primary font-medium" 
-                            : "text-foreground/70 hover:text-foreground hover:bg-muted/50"
-                        }`}
-                        onClick={(e) => {
-                          e.preventDefault();
-                          scrollToSection(item.href);
-                        }}
-                      >
-                        {item.label}
-                      </Button>
+                      item.href.startsWith('/') ? (
+                        <Link key={item.label} to={item.href}>
+                          <Button
+                            variant="ghost"
+                            className="w-full justify-start text-left transition-all duration-200 text-foreground/70 hover:text-foreground hover:bg-muted/50"
+                          >
+                            {item.label}
+                          </Button>
+                        </Link>
+                      ) : (
+                        <Button
+                          key={item.label}
+                          variant="ghost"
+                          className={`w-full justify-start text-left transition-all duration-200 ${
+                            activeSection === item.href.substring(1) 
+                              ? "bg-primary/10 text-primary font-medium" 
+                              : "text-foreground/70 hover:text-foreground hover:bg-muted/50"
+                          }`}
+                          onClick={(e) => {
+                            e.preventDefault();
+                            scrollToSection(item.href);
+                          }}
+                        >
+                          {item.label}
+                        </Button>
+                      )
                     ))}
                   </div>
                 </div>

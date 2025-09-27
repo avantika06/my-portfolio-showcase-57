@@ -2,6 +2,7 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Badge } from "@/components/ui/badge";
 import { Button } from "@/components/ui/button";
 import { ExternalLink, Github, BarChart, TestTube, TrendingUp } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const projects = [
@@ -153,13 +154,17 @@ const Projects = () => {
                     
                     {/* Action Buttons */}
                     <div className="flex gap-2 pt-2">
-                      <Button size="sm" variant="outline" className="flex-1 text-xs">
-                        <Github className="mr-1 h-3 w-3" />
-                        Code
+                      <Button size="sm" variant="outline" className="flex-1 text-xs" asChild>
+                        <a href="https://github.com/avantika-deshmukh" target="_blank" rel="noopener noreferrer">
+                          <Github className="mr-1 h-3 w-3" />
+                          Code
+                        </a>
                       </Button>
-                      <Button size="sm" variant="outline" className="flex-1 text-xs">
-                        <ExternalLink className="mr-1 h-3 w-3" />
-                        Demo
+                      <Button size="sm" variant="outline" className="flex-1 text-xs" asChild>
+                        <a href="#" target="_blank" rel="noopener noreferrer">
+                          <ExternalLink className="mr-1 h-3 w-3" />
+                          Demo
+                        </a>
                       </Button>
                     </div>
                   </CardContent>
@@ -178,13 +183,17 @@ const Projects = () => {
                   experience can contribute to your team's success.
                 </p>
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                  <Button className="bg-gradient-primary">
-                    <Github className="mr-2 h-4 w-4" />
-                    View GitHub Profile
+                  <Button className="bg-gradient-primary" asChild>
+                    <Link to="/projects">
+                      <Github className="mr-2 h-4 w-4" />
+                      View All Projects
+                    </Link>
                   </Button>
-                  <Button variant="outline">
-                    <ExternalLink className="mr-2 h-4 w-4" />
-                    Request Portfolio
+                  <Button variant="outline" asChild>
+                    <a href="https://github.com/avantika-deshmukh" target="_blank" rel="noopener noreferrer">
+                      <ExternalLink className="mr-2 h-4 w-4" />
+                      GitHub Profile
+                    </a>
                   </Button>
                 </div>
               </CardContent>
