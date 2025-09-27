@@ -18,7 +18,7 @@ const Hero = () => {
           </Badge>
           
           {/* Main Heading */}
-          <h1 className="text-5xl md:text-7xl font-bold mb-6 gradient-text leading-tight">
+          <h1 className="text-5xl md:text-7xl font-bold mb-6 text-foreground leading-tight">
             Avantika Deshmukh
           </h1>
           
